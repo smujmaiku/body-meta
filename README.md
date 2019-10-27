@@ -1,4 +1,4 @@
-# Desc DB
+# Body Meta
 
 [![build status][travis-image]][travis-url]
 [![coverage status][codecov-image]][codecov-url]
@@ -16,11 +16,13 @@ Because we don't have a better place to put them.
 
 Becomes:
 
-> Big description of
-> something
->
-> string: "data"
-> number: 123
+```text
+Big description of
+something
+
+string: "data"
+number: 123
+```
 
 ## Installation
 

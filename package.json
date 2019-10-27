@@ -1,6 +1,6 @@
 {
   "name": "body-meta",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lets store data in description fields",
   "main": "index.js",
   "directories": {

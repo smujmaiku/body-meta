@@ -1,5 +1,5 @@
 /*!
- * Desc DB <https://github.com/smujmaiku/body-meta>
+ * Body Meta <https://github.com/smujmaiku/body-meta>
  * Copyright(c) 2016-2019 Michael Szmadzinski
  * MIT Licensed
  */
@@ -10,7 +10,7 @@ const unflatten = flatten.unflatten;
 /**
  * Encode to string
  * @param {Object} data
- * @param {String} data.desc
+ * @param {String} data.body
  * @returns {String}
  */
 function encode(data) {
