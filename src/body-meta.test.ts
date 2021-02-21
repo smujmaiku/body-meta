@@ -1,7 +1,7 @@
-const {
+import {
 	encode,
 	decode,
-} = require('./body-meta');
+} from './body-meta';
 
 describe('body-meta', () => {
 	describe('encode', () => {

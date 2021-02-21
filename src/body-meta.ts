@@ -1,11 +1,10 @@
 /*!
  * Body Meta <https://github.com/smujmaiku/body-meta>
- * Copyright(c) 2016-2019 Michael Szmadzinski
+ * Copyright(c) 2021 Michael Szmadzinski
  * MIT Licensed
  */
 
-const flatten = require('flat');
-const unflatten = flatten.unflatten;
+import { flatten, unflatten } from 'flat';
 
 /**
  * Encode to string
@@ -13,10 +12,11 @@ const unflatten = flatten.unflatten;
  * @param {String} data.body
  * @returns {String}
  */
-function encode(data) {
-	const body = data.body || '';
-	const flatData = flatten(data);
-	delete flatData.body;
+export function encode<T = any>(data: T): string {
+	const {
+		body = '',
+		...flatData
+	} = flatten(data);
 
 	const bodyData = Object.keys(flatData)
 		.map(key => `${key}: ${JSON.stringify(flatData[key])}`)
@@ -30,13 +30,13 @@ function encode(data) {
  * @param {String} body
  * @returns {Object}
  */
-function decode(body) {
-	const data = {};
+export function decode<T = any>(body: string): T {
+	const data: any = {};
 	const rows = body.split('\n');
 
 	while (body.length > 0) {
 		const row = rows.pop();
-		if (row === '') break;
+		if (row === '' || row === undefined) break;
 
 		const colon = row.indexOf(':');
 		if (colon < 0) {
@@ -56,16 +56,13 @@ function decode(body) {
 	// Remove extra blank lines
 	while (true) {
 		const row = rows.pop();
-		if (row !== '') {
+		if (row !== '' && row !== undefined) {
 			rows.push(row);
 			break;
-		};
+		}
 	}
 
 	data.body = rows.join('\n');
 
-	return unflatten(data);
+	return unflatten(data) as T;
 }
-
-exports.encode = encode;
-exports.decode = decode;

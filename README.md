@@ -1,8 +1,5 @@
 # Body Meta
 
-[![build status][travis-image]][travis-url]
-[![coverage status][codecov-image]][codecov-url]
-
 Lets store data in description fields.
 Because we don't have a better place to put them.
 
@@ -40,9 +37,4 @@ Decodes a string into a single Object
 
 ## License
 
-Copyright (c) 2016-2019, Michael Szmadzinski. (MIT License)
-
-[travis-image]: https://travis-ci.org/smujmaiku/body-meta.svg?branch=master
-[travis-url]: https://travis-ci.org/smujmaiku/body-meta
-[codecov-image]: https://coveralls.io/repos/github/smujmaiku/body-meta/badge.svg
-[codecov-url]: https://coveralls.io/github/smujmaiku/body-meta
+Copyright (c) 2021, Michael Szmadzinski. (MIT License)
